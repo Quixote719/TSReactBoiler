@@ -5,8 +5,8 @@ import { PlayGround } from "./components/PlayGround";
 
 ReactDOM.render(
 	<div>
-		<Hello compiler="TS001" framework="R001" />
-		<PlayGround compiler="TS002" framework="R002" />
+		<Hello compiler="TypeScript1" framework="React1" />
+		<PlayGround compiler="TypeScript2" framework="React2" />
 	</div>,
     document.getElementById("example")
 );

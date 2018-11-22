@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //在html中插入生成的打包文件
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -45,6 +45,6 @@ module.exports = {
     
     plugins:[
         new HtmlWebpackPlugin({template: './index.html'}),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin()     //essential for hot-loading
     ]
 };
