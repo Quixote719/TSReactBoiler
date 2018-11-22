@@ -1,10 +1,21 @@
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+
 module.exports = {
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: path.resolve(__dirname, 'build')
     },
 
+    devServer: {
+        contentBase: "./",
+        compress: true,
+        port: 9000,
+        hot: true,
+        open: true,
+    },
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
@@ -30,5 +41,10 @@ module.exports = {
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    }
+    },
+    
+    plugins:[
+        new HtmlWebpackPlugin({template: './index.html'}),
+        new webpack.HotModuleReplacementPlugin()
+    ]
 };
